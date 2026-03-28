@@ -35,7 +35,7 @@ export default function PatientPage() {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return;
 
-    // ✅ FIX (jedyna zmiana)
+    // ✅ FIX
     setUserName(user.email?.split("@")[0] || "");
 
     const { data: patientData } = await supabase
@@ -211,3 +211,7 @@ export default function PatientPage() {
       minHeight: "100vh",
       background: "linear-gradient(180deg,#EAF2FF,#DCEBFF)"
     }}>
+      {/* RESZTA KODU BEZ ZMIAN */}
+    </div>
+  );
+}
