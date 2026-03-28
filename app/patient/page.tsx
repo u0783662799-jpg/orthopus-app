@@ -35,7 +35,7 @@ export default function PatientPage() {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return;
 
-    setUserName(user.email.split("@")[0]);
+   setUserName(user.email?.split("@")[0] || "");
 
     const { data: patientData } = await supabase
       .from("patients")
